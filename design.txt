@@ -1,0 +1,77 @@
+Company Name: Games And Rewards
+Important notes:
+    - customers
+        - firstname
+        - lastnamme
+        - email - UNIQUE
+        - password
+        - username - UNIQUE 
+        - date of registration 
+        - customer's current status
+            - active
+            - banned
+            
+        - customer's level
+            - tier one
+            - tier two 
+            - tier three
+
+
+    CREATE TABLE `customers` (
+        `customer_id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        `firstname` VARCHAR(1OO) NOT NULL,
+        `lastname` VARCHAR(100) NOT NULL,
+        `email` VARCHAR(100) UNIQUE NOT NULL,
+        `password` VARCHAR(100) NOT NULL,
+        `username`  VARCHAR(100) UNIQUE NOT NULL, 
+        `date_of_registration` TIMESTAMP NULL
+    );
+
+
+    SELECT * FROM `customers`;
+
+    INSERT INTO `customers` (`customer_id`, `firstname`, `lastname`, `email`, `password`, `username`, 
+     `date_of_registration`) VALUES (1, `James`, `John`, `james@email.com`, `password1`, `jamesuser`,
+    NOW()); 
+
+    - staff
+        - firstname
+        - lastnamme
+        - role
+        - username
+        - password 
+        - email
+
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS `cassettes`(
+    `id` INT PRIMARY KEY AUNTO_INCREMENT,
+    `title`VARCHAR (300) UNIQUE NOT NULL,
+    `description` TEXT (5000) DEFAULT NULL,
+    `fee`VARCHAR(12),
+    `entry_date`TIMESTAMP
+);
+
+INSERT INTO `cassettes`(`title`, `description`, `fee`, `entry_date`) VALUES ("My wife and I" "This is the movie about Marriage", "650", NOW());
+
+INSERT INTO `cassettes`(`title`, `description`, `fee`, `entry_date`) VALUES ("Money" "This is the movie about Money", "1000", NOW());
+
+INSERT INTO `cassettes`(`title`, `description`, `fee`, `entry_date`) VALUES ("Zainab the fine girl" "This is the movie about the fine girl", "1200", NOW());
+
+INSERT INTO `cassettes`(`title`, `description`, `fee`, `entry_date`) VALUES ("Love is blind" "This is the movie about Love", "750", NOW());
+
+INSERT INTO `cassettes`(`title`, `description`, `fee`, `entry_date`) VALUES ("The Spy" "This is the movie about Spy", "800", NOW());
+
+INSERT INTO `cassettes`(`title`, `description`, `fee`, `entry_date`) VALUES ("The Message" "This is the movie about message", "100", NOW());
+
+INSERT INTO `cassettes`(`title`, `description`, `fee`, `entry_date`) VALUES ("The breath of life" "This is the movie about breath of life", "50", NOW());
+
+
+
+ALTER TABLE `customers` ADD (
+    `cassette_id`INT NOT NULL
+);  
